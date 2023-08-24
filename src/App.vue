@@ -1,19 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="row">
+      <my-button>登录</my-button>
+      <my-button type="primary">primary按钮</my-button>
+      <my-input v-model="username"></my-input>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MyButton from "./components/button.vue";
+import MyDialog from "./components/dialog.vue";
+import MyInput from "./components/input.vue"
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    MyButton,
+    MyDialog,
+    MyInput
+  },
+  data() {
+    return {
+      visible:true,
+      username:"nihao"
+    }
+  },
+};
 </script>
 
 <style>
